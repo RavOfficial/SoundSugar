@@ -38,7 +38,7 @@
 	    "description": "ID of your owner account",
 	    "required": true
     }
-}
+},
 "buildpacks": [
     {
           "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
