@@ -17,6 +17,7 @@
     "telegram-vcbot",
     "telegram-musicbot"
   ],
+  "stack": "container",
   "env": {
     "API_ID": {
             "description": "API_ID of your Telegram Account my.telegram.org/apps",
