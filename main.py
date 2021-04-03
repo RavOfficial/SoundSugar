@@ -280,8 +280,8 @@ async def ytplay(requested_by, query):
         thumbnail = results[0].thumbnails[0]
         duration = results[0].duration
         views = results[0].views
-        if time_to_seconds(duration) >= 1800:
-            await m.edit("__**Bruh! Only songs within 30 Mins.**__")
+        if time_to_seconds(duration) >= 172800:
+            await m.edit("__**Bruh! Only songs within 48 hours.**__")
             playing = False
             return
     except Exception as e:
@@ -315,7 +315,7 @@ async def ytplay(requested_by, query):
 
 
 @app.on_message(
-    filters.command("telegram") & filters.chat(sudo_chat_id) & ~filters.edited
+    filters.command("music") & filters.chat(sudo_chat_id) & ~filters.edited
 )
 async def tgplay(_, message):
     global playing
@@ -326,8 +326,8 @@ async def tgplay(_, message):
         await send("__**Reply to an audio.**__")
         return
     if message.reply_to_message.audio:
-        if int(message.reply_to_message.audio.file_size) >= 104857600:
-            await send("__**Bruh! Only songs within 100 MB.**__")
+        if int(message.reply_to_message.audio.file_size) >= 1048576000:
+            await send("__**Bruh! Only songs within 1GB.**__")
             playing = False
             return
         duration = message.reply_to_message.audio.duration
