@@ -16,14 +16,28 @@ from functions import (
     generate_cover_square
 )
 
-from config import (
-    API_ID as api_id, API_HASH as api_hash,
-    SUDO_CHAT_ID as sudo_chat_id,
-    OWNER_ID as owner_id, ARQ_API, HEROKU
-)
+
+# TODO Make it look less messed up
+is_config = os.path.exists("config.py")
+
+if is_config:
+    from config import (
+        API_ID as api_id, API_HASH as api_hash,
+        SUDO_CHAT_ID as sudo_chat_id,
+        OWNER_ID as owner_id, ARQ_API, HEROKU
+    )
+elif not is_config:
+    from sample_config import (
+        API_ID as api_id, API_HASH as api_hash,
+        SUDO_CHAT_ID as sudo_chat_id,
+        OWNER_ID as owner_id, ARQ_API, HEROKU
+    )
 
 if HEROKU:
-    from config import SESSION_STRING
+    if is_config:
+        from config import SESSION_STRING
+    elif not is_config:
+        from sample_config import SESSION_STRING
 
 
 queue = []  # This is where the whole song queue is stored
@@ -92,7 +106,7 @@ async def killbot(_, message):
 
 @app.on_message(filters.command("play") & filters.chat(sudo_chat_id))
 async def queuer(_, message):
-    usage = "**Usage:**\n__**/play youtube/saavn/deezer Song_Name**__"
+    usage = "**Usage:**\n__**/play yt/dz/saavn Song_Name**__"
     if len(message.command) < 3:
         await send(usage)
         return
@@ -100,7 +114,7 @@ async def queuer(_, message):
     service = text[0]
     song_name = text[1]
     requested_by = message.from_user.first_name
-    services = ["youtube", "deezer", "saavn"]
+    services = ["yt", "dz", "saavn"]
     if service not in services:
         await send(usage)
         return
@@ -115,7 +129,7 @@ async def queuer(_, message):
     await play()
 
 
-@app.on_message(filters.command("skip") & filters.user(owner_id) & ~filters.edited)
+@app.on_message(filters.command("skip") & filters.chat(sudo_chat_id) & ~filters.edited)
 async def skip(_, message):
     global playing
     if len(queue) == 0:
@@ -150,7 +164,7 @@ async def play():
             service = queue[0]["service"]
             song = queue[0]["song"]
             requested_by = queue[0]["requested_by"]
-            if service == "youtube":
+            if service == "yt":
                 playing = True
                 del queue[0]
                 try:
@@ -170,7 +184,7 @@ async def play():
                     await send(str(e))
                     playing = False
                     pass
-            elif service == "deezer":
+            elif service == "dz":
                 playing = True
                 del queue[0]
                 try:
@@ -266,8 +280,8 @@ async def ytplay(requested_by, query):
         thumbnail = results[0].thumbnails[0]
         duration = results[0].duration
         views = results[0].views
-        if time_to_seconds(duration) >= 1800:
-            await m.edit("__**Bruh! Only songs within 30 Mins.**__")
+        if time_to_seconds(duration) >= 172800:
+            await m.edit("__**Bruh! Only songs within 48 hours.**__")
             playing = False
             return
     except Exception as e:
@@ -301,7 +315,7 @@ async def ytplay(requested_by, query):
 
 
 @app.on_message(
-    filters.command("telegram") & filters.chat(sudo_chat_id) & ~filters.edited
+    filters.command("music") & filters.chat(sudo_chat_id) & ~filters.edited
 )
 async def tgplay(_, message):
     global playing
@@ -312,8 +326,8 @@ async def tgplay(_, message):
         await send("__**Reply to an audio.**__")
         return
     if message.reply_to_message.audio:
-        if int(message.reply_to_message.audio.file_size) >= 104857600:
-            await send("__**Bruh! Only songs within 100 MB.**__")
+        if int(message.reply_to_message.audio.file_size) >= 1048576000:
+            await send("__**Bruh! Only songs within 1GB.**__")
             playing = False
             return
         duration = message.reply_to_message.audio.duration
