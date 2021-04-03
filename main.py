@@ -106,7 +106,7 @@ async def killbot(_, message):
 
 @app.on_message(filters.command("play") & filters.chat(sudo_chat_id))
 async def queuer(_, message):
-    usage = "**Usage:**\n__**/play youtube/saavn/deezer Song_Name**__"
+    usage = "**Usage:**\n__**/play yt/dz/saavn Song_Name**__"
     if len(message.command) < 3:
         await send(usage)
         return
@@ -114,7 +114,7 @@ async def queuer(_, message):
     service = text[0]
     song_name = text[1]
     requested_by = message.from_user.first_name
-    services = ["youtube", "deezer", "saavn"]
+    services = ["yt", "dz", "saavn"]
     if service not in services:
         await send(usage)
         return
@@ -164,7 +164,7 @@ async def play():
             service = queue[0]["service"]
             song = queue[0]["song"]
             requested_by = queue[0]["requested_by"]
-            if service == "youtube":
+            if service == "yt":
                 playing = True
                 del queue[0]
                 try:
@@ -184,7 +184,7 @@ async def play():
                     await send(str(e))
                     playing = False
                     pass
-            elif service == "deezer":
+            elif service == "dz":
                 playing = True
                 del queue[0]
                 try:
