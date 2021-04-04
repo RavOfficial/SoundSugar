@@ -66,6 +66,8 @@ async def generate_cover_square(requested_by, title, artist, duration, thumbnail
     img = Image.open("temp.png")
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("etc/font.otf", 20)
+    bigfont = ImageFont.truetype("etc/bigfont.otf", 35)
+    draw.text((450, 10), f"Powered by HARP TECH", (255, 255, 255), font=bigfont)
     draw.text((150, 380), f"Title: {title}", (255, 178, 0), font=font)
     draw.text((150, 405), f"Artist: {artist}", (255, 255, 255), font=font)
     draw.text(
