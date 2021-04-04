@@ -106,14 +106,14 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     img = Image.open("temp.png")
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("etc/font.otf", 32)
-    bigfont = ImageFont.truetype("etc/font.otf", 45)
+    bigfont = ImageFont.truetype("etc/bigfont.otf", 45)
     draw.text((700, 30), f"Powered by HARP TECH", (255, 255, 255), font=bigfont)
-    draw.text((190, 550), f"Title: {title}", (255, 178, 0), font=font)
+    draw.text((190, 553), f"Title: {title}", (255, 178, 0), font=font)
     draw.text(
-        (190, 590), f"Duration: {duration}", (255, 255, 255), font=font
+        (190, 593), f"Duration: {duration}", (255, 255, 255), font=font
     )
-    draw.text((190, 630), f"Views: {views}", (255, 255, 255), font=font)
-    draw.text((190, 670),
+    draw.text((190, 633), f"Views: {views}", (255, 255, 255), font=font)
+    draw.text((190, 673),
         f"Played By: {requested_by}",
         (255, 255, 255),
         font=font,
