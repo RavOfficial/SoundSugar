@@ -7,10 +7,11 @@ HELP_TEXT = """__**I Can Play Music In The Voice Chat**__
 **/joinvc** __To Join A Voice Chat.__
 **/leavevc** __To Leave A Voice Chat.__
 **/telegram** __To Play From Telegram Audio.__
+__**NOTE: Do Not Assign These Commands To Bot Via BotFather.**__
 
-__**NOTE: Do Not Assign These Commands To Bot Via BotFather.**__"""
+__Presented by @HARP_Chat__"""
 
-START_TEXT = "__**Hi I'm Telegram Voice Chat Bot. Join @PatheticProgrammers For Support.**__"
+START_TEXT = "__**Hi I'm Telegram Voice Chat Bot. Join @Harp_tech For Support.**__"
 
-REPO_TEXT = "[Github](https://github.com/thehamkercat/Telegram_vc_bot)" \
-            + " | [Group](t.me/PatheticProgrammers)"
+REPO_TEXT = "[Github](https://github.com/)" \
+            + " | [Group](t.me/Harp_tech)"
