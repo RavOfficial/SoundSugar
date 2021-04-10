@@ -2,7 +2,7 @@
 
 Telegram Voice-Chat Bot To Play Music With Pytgcalls From Various Sources In Your Group.
 
-<img src="https://i.imgur.com/8S8NVy0.png" width="530" height="400">
+<img src="https://telegra.ph/file/0bd7df0446b7a521e5599.jpg" width="530" height="400">
 
 
 # Support
@@ -22,7 +22,7 @@ Telegram Voice-Chat Bot To Play Music With Pytgcalls From Various Sources In You
 Follow this if you are not running on heroku
 
 ```sh
-$ git clone https://github.com/thehamkercat/Telegram_VC_Bot
+$ git clone https://github.com/OfficialBawwa/SoundSugar
 $ cd Telegram_VC_Bot
 $ pip3 install -U pip
 $ pip3 install -U -r requirements.txt
@@ -50,7 +50,7 @@ You will get a session string, copy it, Then use heroku commands to push to hero
 
 
 
-Send [commads](https://github.com/thehamkercat/Telegram_VC_Bot/blob/master/README.md#commands) to bot to 
+Send [commads](https://github.com/OfficialBawwa/SoundSugar/blob/master/README.md#commands) to bot to 
 play music.
 
 
@@ -69,7 +69,12 @@ Command | Description
 
 ## Note
 
-1. If you want any help you can ask [here](https://t.me/PatheticProgrammers)
+1. If you want any help you can ask [here](https://t.me/HARP_Tech)
 
 ## Credits
+
+This userbot Based from Hamkercat's TGVCBOT
+
 1. @MarshalX [For TgCalls]
+2. Hamkercat
+3. Anjana_Ma
