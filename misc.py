@@ -13,5 +13,5 @@ __Presented by @HARP_Chat__"""
 
 START_TEXT = "__**Hi I'm Telegram Voice Chat Bot. Join @Harp_tech For Support.**__"
 
-REPO_TEXT = "[Github](https://github.com/)" \
+REPO_TEXT = "[GitHub Repo](https://github.com/OfficialBawwa/SoundSugar)" \
             + " | [Group](t.me/Harp_tech)"
