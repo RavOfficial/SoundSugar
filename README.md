@@ -7,7 +7,7 @@ Telegram Voice-Chat Bot To Play Music With Pytgcalls From Various Sources In You
 
 # Support
 
-1. All linux based os.
+1. [HARP Tech 🇱🇰](https://t.me/HARP_Tech)
 
 
 ## Requirements
