@@ -19,7 +19,9 @@ Telegram Voice-Chat Bot To Play Music With Pytgcalls From Various Sources In You
 
 ## Run
 
-Follow this if you are not running on heroku
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/OfficialBawwa/SoundSugar/tree/master)
+
+Follow this if you are not running on heroku!
 
 ```sh
 $ git clone https://github.com/OfficialBawwa/SoundSugar
