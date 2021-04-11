@@ -2,7 +2,7 @@
 
 Telegram Voice-Chat Bot To Play Music With Pytgcalls From Various Sources In Your Group.
 
-<img src="https://telegra.ph/file/d6eab48c445aa74303933.jpg" width="550" height="700">
+<img src="https://telegra.ph/file/d6eab48c445aa74303933.jpg" width="550" height="800">
 
 
 # Support
